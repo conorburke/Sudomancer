@@ -23,3 +23,14 @@ game.board = np.array([[0,2,0,4,5,6,7,8,9],[4,5,7,0,8,0,2,3,6],[6,8,9,2,3,7,0,4,
 game.create_blocks(game.board)
 output = game.simple_solve()
 print(output)
+
+
+# play very hard from book
+game = Game()
+game.board = np.array([[0,7,0,0,0,0,2,0,0],[4,0,0,0,9,0,0,3,0],[0,0,3,0,0,2,9,0,8],[2,0,0,7,0,8,0,0,0],[0,3,6,5,1,9,8,2,0],[0,0,0,2,0,3,0,0,5],[3,0,9,1,0,0,7,0,0],[0,4,0,0,2,0,0,0,3],[0,0,2,0,0,0,0,6,0]])
+game.create_blocks(game.board)
+output_board, is_solved = game.simple_solve()
+print(output_board, is_solved)
+output_board, is_solved = game.recursive_solve(output_board, 9)
+print(output_board)
+
